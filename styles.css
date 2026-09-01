@@ -287,6 +287,18 @@ body.menu-open { overflow: hidden; }
 .ph--wide     { aspect-ratio: 5 / 4; }
 .ph--map      { aspect-ratio: 4 / 3; }
 
+/* Real photography */
+.photo {
+  width: 100%; display: block; object-fit: cover;
+  border-radius: var(--radius);
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.05);
+}
+.photo--portrait { aspect-ratio: 4 / 5; }
+.photo--tall     { aspect-ratio: 3 / 4; }
+.photo--wide     { aspect-ratio: 5 / 4; }
+.photo--map      { aspect-ratio: 4 / 3; }
+.hero__img { box-shadow: 0 40px 90px rgba(0,0,0,0.45); }
+
 /* =========================================================
    TRUST STRIP
    ========================================================= */
