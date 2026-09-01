@@ -251,36 +251,57 @@ body.menu-open { overflow: hidden; }
 .hero__scroll i { width: 1px; height: 40px; background: linear-gradient(rgba(255,255,255,0.5), transparent); }
 
 /* =========================================================
-   PLACEHOLDERS (elegant, clearly replaceable)
+   IMAGE PANELS
+   Airy, minimal interior-light panels tuned to the studio's
+   real aesthetic: bright warm white, soft greige, gentle
+   natural light, a whisper of greenery. Real photography
+   drops straight into these slots.
    ========================================================= */
 .ph {
   position: relative; width: 100%; border-radius: var(--radius); overflow: hidden;
   background:
-    linear-gradient(135deg, var(--champagne), var(--stone) 55%, #cdbfa9);
-  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.04);
+    radial-gradient(130% 90% at 72% 8%, #ffffff 0%, #f6f1ea 42%, #e9e0d3 100%);
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.045);
 }
+/* soft window light + faint greenery + warm floor glow */
 .ph::before {
   content: ""; position: absolute; inset: 0;
   background:
-    radial-gradient(80% 60% at 25% 20%, rgba(255,255,255,0.5), transparent 60%),
-    radial-gradient(70% 70% at 90% 90%, rgba(106,95,82,0.22), transparent 60%);
+    linear-gradient(105deg, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0) 34%),
+    radial-gradient(42% 55% at 88% 78%, rgba(146,166,120,0.20), transparent 72%),
+    radial-gradient(60% 50% at 20% 92%, rgba(120,106,88,0.16), transparent 70%);
 }
+/* subtle vertical light banding, like tall studio windows */
 .ph::after {
-  content: attr(data-ph);
-  position: absolute; left: 50%; bottom: 1rem; transform: translateX(-50%);
-  font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase;
-  color: rgba(48,44,38,0.5); background: rgba(252,250,246,0.7);
-  padding: 0.3rem 0.7rem; border-radius: 100px; white-space: nowrap;
+  content: ""; position: absolute; inset: 0;
+  background: repeating-linear-gradient(
+    100deg,
+    rgba(255,255,255,0) 0px,
+    rgba(255,255,255,0) 62px,
+    rgba(255,255,255,0.14) 63px,
+    rgba(255,255,255,0) 66px
+  );
+  opacity: 0.6;
 }
 .ph__mark {
   position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
   width: clamp(52px, 8vw, 78px); height: clamp(52px, 8vw, 78px);
   background: url("/assets/img/logo-dark.png") center/contain no-repeat;
-  opacity: 0.16;
+  opacity: 0.12; z-index: 1;
 }
-.ph--dark { background: linear-gradient(135deg, #2b2822, #1f1d1a 60%, #14120f); }
-.ph--dark::after { color: rgba(255,255,255,0.55); background: rgba(0,0,0,0.35); }
-.ph--dark .ph__mark { background-image: url("/assets/img/logo-white.png"); opacity: 0.2; }
+
+/* editorial dark panel for the cosmetic feature */
+.ph--dark {
+  background:
+    radial-gradient(120% 90% at 75% 15%, #3a352d 0%, #262219 55%, #16130e 100%);
+}
+.ph--dark::before {
+  background:
+    linear-gradient(105deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0) 40%),
+    radial-gradient(50% 60% at 80% 80%, rgba(169,138,95,0.28), transparent 72%);
+}
+.ph--dark::after { opacity: 0.25; }
+.ph--dark .ph__mark { background-image: url("/assets/img/logo-white.png"); opacity: 0.16; }
 
 .ph--portrait { aspect-ratio: 4 / 5; }
 .ph--tall     { aspect-ratio: 3 / 4; }
