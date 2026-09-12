@@ -4,6 +4,41 @@
    adds only what interior pages need. Does not modify styles.css.
    ========================================================= */
 
+/* ---------- Screen-reader-only (SEO/accessibility text) ---------- */
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+}
+
+/* ---------- Mobile sticky "Book" bar ---------- */
+.mobile-book-bar { display: none; }
+@media (max-width: 780px) {
+  .mobile-book-bar {
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 95;
+    display: flex; align-items: stretch; gap: 0.6rem;
+    background: rgba(250,247,241,0.97);
+    -webkit-backdrop-filter: saturate(140%) blur(12px); backdrop-filter: saturate(140%) blur(12px);
+    border-top: 1px solid var(--line);
+    padding: 0.6rem 0.8rem calc(0.6rem + env(safe-area-inset-bottom, 0px));
+    box-shadow: 0 -8px 24px rgba(0,0,0,0.12);
+  }
+  .mobile-book-bar .btn { width: auto; padding: 0.95rem 1rem; }
+  .mobile-book-bar .mbb-book { flex: 1; }
+  .mobile-book-bar .mbb-call { flex: 0 0 auto; }
+  body { padding-bottom: 4.75rem; }
+}
+
+/* ---------- Insurance plan list (billing page) ---------- */
+.plan-list {
+  max-width: var(--wrap); margin: 0 auto; padding: 0 var(--gutter);
+  list-style: none; display: flex; flex-wrap: wrap; gap: 0.6rem 0.7rem;
+}
+.plan-list li {
+  border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 0.6rem 1.05rem; font-size: 0.82rem; letter-spacing: 0.03em;
+  color: var(--ink); background: var(--soft);
+}
+
 /* ---------- Clickable "What we do" tiles ---------- */
 .services__list .svc { padding: 0; }
 .svc__link {
