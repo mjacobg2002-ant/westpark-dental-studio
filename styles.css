@@ -527,25 +527,20 @@ body.menu-open { overflow: hidden; }
 }
 
 @media (max-width: 780px) {
-  /* Mobile hero: photo becomes the full-bleed background, text overlaid */
+  /* Mobile hero: dark gradient with the studio photo shown as a visible image below the copy */
   .hero {
-    padding-top: 8.5rem; padding-bottom: 4.5rem; min-height: 86vh;
-    display: flex; align-items: center;
-    background:
-      linear-gradient(180deg, rgba(14,12,9,0.74) 0%, rgba(14,12,9,0.48) 42%, rgba(14,12,9,0.84) 100%),
-      url("/assets/img/studio-room.jpg") center center / cover no-repeat;
+    padding-top: 8.5rem; padding-bottom: 3.5rem;
+    background: linear-gradient(160deg, #16140f 0%, #221f1a 55%, #2b271f 100%);
   }
-  .hero::before {
-    display: block; content: ""; position: absolute; inset: 0; z-index: 0;
-    background: rgba(18,15,11,0.14);
-    -webkit-backdrop-filter: blur(1.2px); backdrop-filter: blur(1.2px);
-  }
-  .hero__grid { grid-template-columns: 1fr; gap: 0; position: relative; z-index: 1; }
+  .hero::before { display: none; }
+  .hero__grid { grid-template-columns: 1fr; gap: 2.25rem; }
   .hero__copy { max-width: 44ch; }
   .hero__title { font-size: clamp(2.9rem, 10vw, 3.9rem); margin-bottom: 1.15rem; }
-  .hero__lede { max-width: 42ch; font-size: 1.1rem; color: rgba(255,255,255,0.92); margin-bottom: 1.9rem; }
+  .hero__lede { max-width: 42ch; font-size: 1.1rem; color: rgba(255,255,255,0.9); margin-bottom: 1.9rem; }
   .hero__actions { margin-bottom: 1.4rem; }
-  .hero__media { display: none; }
+  .hero__media { display: block; max-width: 520px; width: 100%; margin: 0 auto; }
+  .hero__media .photo { aspect-ratio: 4 / 3; }
+  .hero__badge { left: 1rem; bottom: 1rem; }
   .hero__scroll { display: none; }
   .intro__grid, .doctor__grid, .location__grid, .feature__grid { grid-template-columns: 1fr; gap: 2.5rem; }
   .doctor__media { max-width: 460px; }
