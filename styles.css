@@ -127,7 +127,8 @@ p { margin: 0 0 1.1em; }
   display: flex; align-items: center; justify-content: space-between; gap: 1.5rem;
 }
 .brand { display: block; line-height: 0; }
-.brand-logo { height: clamp(46px, 6vw, 62px); width: auto; transition: height 0.4s var(--ease); }
+.brand-logo { height: clamp(66px, 8vw, 96px); width: auto; transition: height 0.4s var(--ease); }
+.site-header.is-scrolled .brand-logo { height: clamp(52px, 6vw, 72px); }
 .brand-logo--dark { display: none; }
 
 /* logos: hero is dark, so header starts with white logo; after scroll header turns light */
@@ -525,9 +526,13 @@ body.menu-open { overflow: hidden; }
 }
 
 @media (max-width: 780px) {
-  .hero { padding-top: 7rem; }
-  .hero__grid { grid-template-columns: 1fr; gap: 2.5rem; }
-  .hero__media { max-width: 440px; }
+  .hero { padding-top: 9rem; padding-bottom: 4rem; }
+  .hero__grid { grid-template-columns: 1fr; gap: 2.75rem; text-align: left; }
+  .hero__title { font-size: clamp(3rem, 11vw, 4.4rem); margin-bottom: 1.3rem; }
+  .hero__lede { max-width: 46ch; font-size: 1.12rem; }
+  .hero__media { max-width: 560px; width: 100%; margin-inline: auto; }
+  .hero__media .photo { aspect-ratio: 4 / 3; }
+  .hero__badge { left: 1rem; bottom: 1rem; }
   .hero__scroll { display: none; }
   .intro__grid, .doctor__grid, .location__grid, .feature__grid { grid-template-columns: 1fr; gap: 2.5rem; }
   .intro__media, .doctor__media { max-width: 460px; }

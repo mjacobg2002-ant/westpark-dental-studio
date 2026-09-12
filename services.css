@@ -4,6 +4,19 @@
    adds only what interior pages need. Does not modify styles.css.
    ========================================================= */
 
+/* ---------- Clickable "What we do" tiles ---------- */
+.services__list .svc { padding: 0; }
+.svc__link {
+  display: block; height: 100%; padding: 2.5rem 2rem 2.75rem; color: inherit;
+}
+.svc__link:hover .svc__title { color: var(--gold); }
+.svc__more {
+  display: inline-flex; align-items: center; gap: 0.4rem; margin-top: 1.35rem;
+  font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold);
+}
+.svc__more i { font-style: normal; transition: transform 0.3s var(--ease); }
+.svc:hover .svc__more i { transform: translateX(4px); }
+
 /* ---------- Primary-nav dropdown (Services) ---------- */
 .primary-nav .nav-item { position: relative; display: flex; align-items: center; }
 .primary-nav .nav-item > a { display: inline-flex; align-items: center; gap: 0.45rem; }
