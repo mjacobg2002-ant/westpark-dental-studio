@@ -105,7 +105,44 @@
 .services--dark .svc__more { color: var(--gold-soft); }
 
 
-/* ---------- Clickable "What we do" tiles ---------- */
+/* ---------- "What we do" — original tiles, 2 rows, swipe horizontally ---------- */
+.svc-scroller { position: relative; }
+.svc-scroller::before, .svc-scroller::after { content: ""; position: absolute; top: 0; bottom: 0; width: 44px; pointer-events: none; z-index: 3; }
+.svc-scroller::before { left: 0;  background: linear-gradient(90deg, #1a1712, rgba(26,23,18,0)); }
+.svc-scroller::after  { right: 0; background: linear-gradient(270deg, #1a1712, rgba(26,23,18,0)); }
+.services__list {
+  display: grid !important; grid-auto-flow: column; grid-template-columns: none !important;
+  grid-template-rows: repeat(2, 1fr); grid-auto-columns: clamp(258px, 46%, 340px);
+  overflow-x: auto; scroll-snap-type: x proximity; scroll-behavior: smooth;
+  gap: 0; margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--line-dark);
+  -webkit-overflow-scrolling: touch; overscroll-behavior-x: contain;
+  scrollbar-width: thin; scrollbar-color: rgba(255,255,255,0.22) transparent;
+}
+.services__list::-webkit-scrollbar { height: 6px; }
+.services__list::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.18); border-radius: 999px; }
+.services__list::-webkit-scrollbar-track { background: transparent; }
+.services__list .svc {
+  scroll-snap-align: start; padding: 0 !important; min-height: 212px;
+  border: 0 !important; border-right: 1px solid var(--line-dark) !important;
+  border-bottom: 1px solid var(--line-dark) !important; border-radius: 0 !important;
+  background: transparent; transition: background .3s var(--ease);
+}
+.services__list .svc:hover { background: rgba(255,255,255,0.04); }
+.services__list .svc__link { display: block; height: 100%; padding: 2.1rem 1.85rem; color: inherit; }
+.svc-arrows { display: flex; gap: 0.6rem; margin-top: 1.2rem; padding: 0 var(--gutter); }
+.svc-arrow {
+  width: 46px; height: 46px; border-radius: 50%; border: 1px solid var(--line-dark);
+  background: transparent; color: var(--soft); cursor: pointer; font-size: 1.3rem; line-height: 1;
+  display: grid; place-items: center; transition: border-color .3s var(--ease), color .3s var(--ease);
+}
+.svc-arrow:hover { border-color: var(--gold); color: var(--gold); }
+@media (max-width: 640px) {
+  .services__list { grid-auto-columns: 82%; }
+  .svc-arrows { display: none; }
+  .svc-scroller::before, .svc-scroller::after { width: 22px; }
+}
+
+/* ---------- Clickable "what we do" tile internals ---------- */
 .services__list .svc { padding: 0; }
 .svc__link {
   display: block; height: 100%; padding: 2.5rem 2rem 2.75rem; color: inherit;
