@@ -1,0 +1,137 @@
+/* =========================================================
+   Westpark Dental Studio — Service pages (add-on)
+   Extends styles.css. Reuses the site's tokens & components;
+   adds only what interior pages need. Does not modify styles.css.
+   ========================================================= */
+
+/* ---------- Interior page hero (dark, clears fixed header) ---------- */
+.page-hero {
+  position: relative;
+  background: linear-gradient(160deg, #16140f 0%, #221f1a 55%, #2b271f 100%);
+  color: var(--soft);
+  padding: clamp(8.5rem, 20vh, 12rem) 0 clamp(3.5rem, 8vh, 5.5rem);
+  overflow: hidden;
+}
+.page-hero::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background:
+    radial-gradient(60% 50% at 82% 12%, rgba(169,138,95,0.18), transparent 70%),
+    radial-gradient(50% 60% at 8% 92%, rgba(169,138,95,0.08), transparent 70%);
+}
+.page-hero__inner {
+  position: relative; max-width: var(--wrap); margin: 0 auto; padding: 0 var(--gutter);
+  max-width: min(var(--wrap), 900px);
+}
+.page-hero .eyebrow { color: var(--gold-soft); }
+.page-hero__title {
+  font-family: var(--serif); font-weight: 300;
+  font-size: clamp(2.4rem, 1.3rem + 4.5vw, 4.4rem); line-height: 1.05;
+  letter-spacing: -0.015em; margin: 0 0 1.4rem; color: var(--soft);
+}
+.page-hero__lede {
+  max-width: 54ch; color: rgba(255,255,255,0.78);
+  font-size: clamp(1.02rem, 0.98rem + 0.4vw, 1.18rem); margin-bottom: 2.2rem;
+}
+.page-hero__actions { display: flex; flex-wrap: wrap; gap: 1rem; }
+.page-hero__actions .btn--solid { background: var(--soft); color: var(--charcoal); }
+.page-hero__actions .btn--solid:hover { background: var(--gold); color: #fff; }
+.page-hero__actions .btn--ghost { color: var(--soft); border-color: rgba(255,255,255,0.4); }
+.page-hero__actions .btn--ghost:hover { background: var(--soft); color: var(--charcoal); border-color: var(--soft); }
+
+/* ---------- Breadcrumb ---------- */
+.breadcrumb {
+  font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase;
+  color: rgba(255,255,255,0.55); margin-bottom: 1.5rem;
+}
+.breadcrumb a { color: rgba(255,255,255,0.8); border-bottom: 1px solid transparent; padding-bottom: 2px; }
+.breadcrumb a:hover { border-color: var(--gold-soft); color: #fff; }
+.breadcrumb span { color: var(--gold-soft); }
+
+/* ---------- Benefits card beside intro ---------- */
+.svc-aside {
+  background: var(--soft); border: 1px solid var(--line);
+  border-radius: var(--radius); padding: 2rem 1.9rem;
+}
+.svc-aside h3 { font-size: 1.35rem; margin: 0 0 1.1rem; }
+.svc-aside .feature__points { margin-bottom: 1.6rem; }
+.svc-aside .feature__points li { color: var(--taupe-deep); }
+
+/* ---------- Steps ---------- */
+.steps { background: var(--soft); }
+.steps__head { max-width: var(--wrap); margin: 0 auto 3rem; padding: 0 var(--gutter); text-align: center; }
+.steps__head .eyebrow { margin-bottom: 1rem; }
+.steps__grid {
+  max-width: var(--wrap); margin: 0 auto; padding: 0 var(--gutter);
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;
+  border-top: 1px solid var(--line);
+}
+.step {
+  padding: 2.25rem 1.6rem 2.5rem; border-bottom: 1px solid var(--line);
+  border-right: 1px solid var(--line);
+}
+.step:nth-child(4n) { border-right: 0; }
+.step__n { font-family: var(--serif); font-size: 2rem; color: var(--gold); line-height: 1; }
+.step h3 { font-size: 1.25rem; margin: 1.1rem 0 0.6rem; }
+.step p { font-size: 0.92rem; color: var(--taupe-deep); margin: 0; }
+
+/* ---------- FAQ ---------- */
+.faq { background: var(--ivory); }
+.faq__inner { max-width: 860px; margin: 0 auto; padding: 0 var(--gutter); }
+.faq__head { text-align: center; margin-bottom: 3rem; }
+.faq__head .eyebrow { margin-bottom: 1rem; }
+.faq__item { border-bottom: 1px solid var(--line); }
+.faq__item summary {
+  list-style: none; cursor: pointer; padding: 1.5rem 2.5rem 1.5rem 0;
+  position: relative; font-family: var(--serif); font-size: clamp(1.1rem, 1rem + 0.6vw, 1.4rem);
+  color: var(--charcoal); line-height: 1.3;
+}
+.faq__item summary::-webkit-details-marker { display: none; }
+.faq__item summary::after {
+  content: "+"; position: absolute; right: 0; top: 1.35rem;
+  font-family: var(--sans); font-weight: 300; font-size: 1.6rem; color: var(--gold);
+  transition: transform 0.3s var(--ease);
+}
+.faq__item[open] summary::after { transform: rotate(45deg); }
+.faq__item p { color: var(--taupe-deep); max-width: 66ch; padding: 0 2.5rem 1.6rem 0; margin: 0; }
+.faq__item a { color: var(--charcoal); border-bottom: 1px solid var(--stone); }
+.faq__item a:hover { border-color: var(--gold); color: var(--gold); }
+
+/* ---------- Related services (as links) ---------- */
+a.svc { display: block; color: inherit; }
+a.svc:hover .svc__title { color: var(--gold); }
+.svc__title { transition: color 0.3s var(--ease); }
+.svc__media { aspect-ratio: 5 / 4; margin-bottom: 1.25rem; overflow: hidden; border-radius: var(--radius); }
+.svc__media img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.6s var(--ease); }
+a.svc:hover .svc__media img { transform: scale(1.04); }
+
+/* ---------- Services hub category blocks ---------- */
+.svc-cat { padding: clamp(3.5rem, 8vh, 6rem) 0; }
+.svc-cat:nth-child(even) { background: var(--soft); }
+.svc-cat:nth-child(odd)  { background: var(--ivory); }
+.svc-cat__head { max-width: var(--wrap); margin: 0 auto 2.5rem; padding: 0 var(--gutter); }
+.svc-grid {
+  max-width: var(--wrap); margin: 0 auto; padding: 0 var(--gutter);
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem 2rem;
+}
+.svc-grid .svc { padding: 0; border: 0; }
+.svc-grid .svc:hover { background: transparent; }
+
+/* ---------- Intro media (reused .intro but service variant) ---------- */
+.svc-intro .intro__grid { grid-template-columns: 1.05fr 0.95fr; align-items: start; }
+.svc-intro .intro__copy p { max-width: 60ch; }
+.svc-intro__media img { aspect-ratio: 4 / 5; object-fit: cover; }
+
+@media (max-width: 920px) {
+  .steps__grid { grid-template-columns: repeat(2, 1fr); }
+  .step:nth-child(4n) { border-right: 1px solid var(--line); }
+  .step:nth-child(2n) { border-right: 0; }
+  .svc-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 780px) {
+  .svc-intro .intro__grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) {
+  .steps__grid { grid-template-columns: 1fr; }
+  .step { border-right: 0 !important; }
+  .svc-grid { grid-template-columns: 1fr; }
+}
