@@ -85,6 +85,25 @@
   color: var(--ink); background: var(--soft);
 }
 
+/* ---------- Dark "What we do" section (matches the final CTA) ---------- */
+.services--dark {
+  background:
+    radial-gradient(70% 120% at 50% 0%, rgba(169,138,95,0.20), transparent 60%),
+    linear-gradient(165deg, #16140f, #221f1a);
+  color: rgba(255,255,255,0.82);
+}
+.services--dark .eyebrow { color: var(--gold-soft); }
+.services--dark .section-title { color: var(--soft); }
+.services--dark .services__list { border-top-color: var(--line-dark); }
+.services--dark .svc { border-color: var(--line-dark) !important; }
+.services--dark .svc:hover { background: rgba(255,255,255,0.04); }
+.services--dark .svc__idx { color: var(--gold-soft); }
+.services--dark .svc__label { color: var(--gold-soft); }
+.services--dark .svc__title { color: var(--soft); }
+.services--dark .svc__desc { color: rgba(255,255,255,0.60); }
+.services--dark .svc__link:hover .svc__title { color: var(--gold-soft); }
+.services--dark .svc__more { color: var(--gold-soft); }
+
 /* ---------- Clickable "What we do" tiles ---------- */
 .services__list .svc { padding: 0; }
 .svc__link {
