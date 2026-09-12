@@ -146,26 +146,28 @@
 
 /* ---------- "What we do" — original tiles in a smooth horizontal swipe rail ---------- */
 .services__list {
-  display: flex !important; grid-template-columns: none !important; border-top: 0 !important;
+  display: flex !important; grid-template-columns: none !important;
   overflow-x: auto; scroll-snap-type: x proximity; scroll-behavior: smooth;
-  gap: 1.15rem; padding: 0.5rem var(--gutter) 1.25rem; margin: 0; list-style: none;
+  gap: 0; padding: 0; margin: 0; list-style: none;
+  border-top: 1px solid var(--line-dark); border-bottom: 1px solid var(--line-dark);
   -webkit-overflow-scrolling: touch; overscroll-behavior-x: contain;
   scrollbar-width: thin; scrollbar-color: rgba(255,255,255,0.22) transparent;
 }
 .services__list::-webkit-scrollbar { height: 6px; }
 .services__list::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.18); border-radius: 999px; }
 .services__list::-webkit-scrollbar-track { background: transparent; }
+/* keep the original tile look: no boxes/rounded cards — just thin dividers */
 .services__list .svc {
-  flex: 0 0 clamp(275px, 30%, 335px); scroll-snap-align: start; padding: 0 !important;
-  border: 1px solid var(--line-dark) !important; border-radius: var(--radius);
-  background: rgba(255,255,255,0.03);
-  transition: border-color .3s var(--ease), background .3s var(--ease), transform .3s var(--ease);
+  flex: 0 0 clamp(272px, 31%, 340px); scroll-snap-align: start; padding: 0 !important;
+  border: 0 !important; border-right: 1px solid var(--line-dark) !important; border-radius: 0 !important;
+  background: transparent; transition: background .3s var(--ease);
 }
-.services__list .svc:hover { background: rgba(255,255,255,0.055); border-color: var(--gold) !important; transform: translateY(-4px); }
-.services__list .svc__link { display: block; height: 100%; padding: 2.2rem 1.85rem 2.3rem; color: inherit; }
+.services__list .svc:last-child { border-right: 0 !important; }
+.services__list .svc:hover { background: rgba(255,255,255,0.04); transform: none; }
+.services__list .svc__link { display: block; height: 100%; padding: 2.5rem 2rem 2.75rem; color: inherit; }
 @media (max-width: 640px) {
-  .services__list .svc { flex: 0 0 74%; }
-  .services__list .svc__link { padding: 1.9rem 1.55rem 2rem; }
+  .services__list .svc { flex: 0 0 78%; }
+  .services__list .svc__link { padding: 2.1rem 1.7rem 2.2rem; }
 }
 
 /* ---------- Clickable "What we do" tiles ---------- */
