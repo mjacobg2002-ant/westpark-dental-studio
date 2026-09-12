@@ -113,9 +113,10 @@
 .services__list {
   display: grid !important; grid-auto-flow: column; grid-template-columns: none !important;
   grid-template-rows: repeat(2, 1fr); grid-auto-columns: clamp(258px, 46%, 340px);
-  overflow-x: auto; scroll-snap-type: x proximity; scroll-behavior: smooth;
+  overflow-x: auto; overflow-y: hidden; touch-action: pan-x;
+  scroll-snap-type: x proximity; scroll-behavior: smooth;
   gap: 0; margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--line-dark);
-  -webkit-overflow-scrolling: touch; overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch; overscroll-behavior: contain;
   scrollbar-width: thin; scrollbar-color: rgba(255,255,255,0.22) transparent;
 }
 .services__list::-webkit-scrollbar { height: 6px; }
