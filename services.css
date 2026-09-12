@@ -4,6 +4,48 @@
    adds only what interior pages need. Does not modify styles.css.
    ========================================================= */
 
+/* ---------- Primary-nav dropdown (Services) ---------- */
+.primary-nav .nav-item { position: relative; display: flex; align-items: center; }
+.primary-nav .nav-item > a { display: inline-flex; align-items: center; gap: 0.45rem; }
+.nav-caret {
+  width: 0.42em; height: 0.42em; border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor; transform: rotate(45deg) translateY(-1px);
+  transition: transform 0.3s var(--ease); opacity: 0.7;
+}
+.primary-nav .nav-item:hover .nav-caret,
+.primary-nav .nav-item:focus-within .nav-caret { transform: rotate(-135deg) translateY(1px); }
+
+.dropdown-panel {
+  position: absolute; top: 100%; left: 0; margin-top: 0.75rem;
+  background: var(--soft); border: 1px solid var(--line); border-radius: var(--radius);
+  box-shadow: 0 30px 70px rgba(0,0,0,0.24);
+  padding: 1.6rem 1.9rem;
+  display: grid; grid-template-columns: repeat(5, minmax(148px, 1fr)); gap: 0.2rem 1.6rem;
+  width: max-content; max-width: 90vw;
+  opacity: 0; visibility: hidden; transform: translateY(8px);
+  transition: opacity 0.28s var(--ease), transform 0.28s var(--ease), visibility 0.28s;
+  z-index: 130;
+}
+/* invisible hover bridge so the panel doesn't disappear between link and panel */
+.dropdown-panel::before { content: ""; position: absolute; left: 0; right: 0; top: -0.75rem; height: 0.75rem; }
+.primary-nav .nav-item:hover .dropdown-panel,
+.primary-nav .nav-item:focus-within .dropdown-panel { opacity: 1; visibility: visible; transform: translateY(0); }
+
+.dropdown-col h4 {
+  font-family: var(--sans); font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--taupe); font-weight: 400; margin: 0.35rem 0 0.55rem;
+}
+.primary-nav .dropdown-panel a {
+  display: block; padding: 0.34rem 0; font-size: 0.82rem; letter-spacing: 0;
+  text-transform: none; color: var(--ink) !important; white-space: nowrap;
+}
+.primary-nav .dropdown-panel a::after { display: none; }
+.primary-nav .dropdown-panel a:hover { color: var(--gold) !important; }
+
+@media (max-width: 1160px) {
+  .dropdown-panel { grid-template-columns: repeat(3, minmax(148px, 1fr)); }
+}
+
 /* ---------- Interior page hero (dark, clears fixed header) ---------- */
 .page-hero {
   position: relative;

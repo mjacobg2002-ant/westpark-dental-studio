@@ -24,6 +24,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
 
 <link rel="stylesheet" href="/styles.css" />
+<link rel="stylesheet" href="/services.css" />
 
 <!-- Local business structured data -->
 <script type="application/ld+json">
@@ -67,13 +68,13 @@
     </a>
 
     <nav class="primary-nav" aria-label="Primary">
-      <a href="/services/">Services</a>
-      <a href="#prevent">General</a>
-      <a href="#cosmetic">Cosmetic</a>
-      <a href="#invisalign">Invisalign</a>
-      <a href="#restore">Implants</a>
-      <a href="#doctor">About</a>
-      <a href="#location">Contact</a>
+      <div class="nav-item has-dropdown">
+        <a href="/services/">Services <i class="nav-caret" aria-hidden="true"></i></a>
+        <div class="dropdown-panel"><div class="dropdown-col"><h4>General &amp; Preventive</h4><a href="/services/general-dentistry.html">General Dentistry</a><a href="/services/dental-cleanings.html">Teeth Cleanings</a><a href="/services/oral-cancer-screenings.html">Oral Cancer Screenings</a><a href="/services/fluoride-treatment.html">Fluoride Treatment</a><a href="/services/dental-sealants.html">Dental Sealants</a></div><div class="dropdown-col"><h4>Cosmetic</h4><a href="/services/cosmetic-dentistry.html">Cosmetic Dentistry</a><a href="/services/teeth-whitening.html">Teeth Whitening</a><a href="/services/porcelain-veneers.html">Porcelain Veneers</a><a href="/services/dental-bonding.html">Dental Bonding</a></div><div class="dropdown-col"><h4>Orthodontics</h4><a href="/services/invisalign.html">Invisalign</a><a href="/services/orthodontics.html">Braces &amp; Orthodontics</a></div><div class="dropdown-col"><h4>Restorative</h4><a href="/services/dental-fillings.html">Tooth-Colored Fillings</a><a href="/services/crowns-bridges.html">Crowns &amp; Bridges</a><a href="/services/root-canal.html">Root Canal Therapy</a><a href="/services/dental-implants.html">Dental Implants</a><a href="/services/dentures.html">Dentures</a><a href="/services/tooth-extractions.html">Tooth Extractions</a></div><div class="dropdown-col"><h4>Specialty &amp; Urgent</h4><a href="/services/gum-disease.html">Gum Disease Therapy</a><a href="/services/pediatric-dentistry.html">Pediatric Dentistry</a><a href="/services/tmj-treatment.html">TMJ / TMD Treatment</a><a href="/services/emergency-dentist.html">Emergency Dentist</a></div></div>
+      </div>
+      <a href="/#billing">Billing &amp; Financing</a>
+      <a href="/#doctor">About</a>
+      <a href="/#location">Contact</a>
     </nav>
 
     <div class="header-actions">
@@ -93,12 +94,9 @@
 <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
   <nav aria-label="Mobile">
     <a href="/services/">All Services</a>
-    <a href="#prevent">General Dentistry</a>
-    <a href="#cosmetic">Cosmetic Dentistry</a>
-    <a href="#invisalign">Invisalign</a>
-    <a href="#restore">Dental Implants</a>
-    <a href="#doctor">About Dr. Ajineh</a>
-    <a href="#location">Location &amp; Contact</a>
+    <a href="/#billing">Billing &amp; Financing</a>
+    <a href="/#doctor">About Dr. Ajineh</a>
+    <a href="/#location">Location &amp; Contact</a>
   </nav>
   <div class="mobile-menu__foot">
     <a class="btn btn--solid" href="https://book2.getweave.com/1726d058-c787-4264-8345-746edc828c96/request-appointment?source=WEBSITE" target="_blank" rel="noopener">Book an Appointment</a>
@@ -358,7 +356,7 @@
 </section>
 
 <!-- ================= INSURANCE ================= -->
-<section class="insurance" aria-labelledby="ins-title">
+<section class="insurance" id="billing" aria-labelledby="ins-title">
   <div class="insurance__inner">
     <div class="insurance__copy">
       <p class="eyebrow reveal">Insurance &amp; financing</p>
@@ -410,7 +408,7 @@
         <h3>Practice</h3>
         <a href="#doctor">About Dr. Ajineh</a>
         <a href="#location">Location</a>
-        <a href="#book">Insurance &amp; Financing</a>
+        <a href="/#billing">Insurance &amp; Financing</a>
         <a href="https://book2.getweave.com/1726d058-c787-4264-8345-746edc828c96/request-appointment?source=WEBSITE" target="_blank" rel="noopener">Book a Visit</a>
       </div>
       <div>
