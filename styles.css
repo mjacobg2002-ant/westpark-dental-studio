@@ -350,7 +350,7 @@ body.menu-open { overflow: hidden; }
 /* ---------- INTRO ---------- */
 .intro { background: var(--soft); }
 .intro__grid {
-  display: grid; grid-template-columns: 0.9fr 1.1fr; gap: clamp(2rem, 6vw, 5.5rem); align-items: center;
+  display: grid; grid-template-columns: 1.15fr 0.85fr; gap: clamp(2rem, 6vw, 5.5rem); align-items: center;
 }
 .intro__copy p { color: var(--taupe-deep); max-width: 46ch; }
 .intro .section-title { margin-bottom: 1.75rem; }
@@ -420,7 +420,7 @@ body.menu-open { overflow: hidden; }
 .experience {
   background: linear-gradient(165deg, #201d1a, #2c2822);
   color: rgba(255,255,255,0.8);
-  padding: clamp(5rem, 11vh, 9rem) 0;
+  padding: clamp(5rem, 11vh, 9rem) 0 clamp(3rem, 6vh, 4.5rem);
 }
 .experience__inner { max-width: var(--wrap); margin: 0 auto; padding: 0 var(--gutter); }
 .experience__title { font-size: clamp(2rem, 1.3rem + 3vw, 3.6rem); color: var(--soft); max-width: 15ch; margin-bottom: 1.5rem; }
@@ -475,7 +475,8 @@ body.menu-open { overflow: hidden; }
   max-width: var(--wrap); margin: 0 auto; padding: clamp(3.5rem, 8vh, 5.5rem) var(--gutter) 3rem;
   display: grid; grid-template-columns: 1.2fr 2fr; gap: clamp(2rem, 6vw, 5rem);
 }
-.site-footer__brand img { height: 70px; width: auto; margin-bottom: 1.25rem; }
+.site-footer__brand img { height: 150px; width: auto; margin-bottom: 1.25rem; }
+@media (max-width: 780px) { .site-footer__brand img { height: 96px; } }
 .site-footer__brand p { max-width: 30ch; font-size: 0.9rem; }
 .site-footer__nav { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
 .site-footer__nav h3 { font-family: var(--sans); font-size: 0.7rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--gold-soft); font-weight: 400; margin-bottom: 1.25rem; }
@@ -547,7 +548,8 @@ body.menu-open { overflow: hidden; }
   .hero__media { display: none; }
   .hero__scroll { display: none; }
   .intro__grid, .doctor__grid, .location__grid, .feature__grid { grid-template-columns: 1fr; gap: 2.5rem; }
-  .intro__media, .doctor__media { max-width: 460px; }
+  .doctor__media { max-width: 460px; }
+  .intro__media { max-width: 560px; }
   .feature__grid--reverse .feature__media { order: 0; }
   .feature__media { order: -1; }
   .trust__list { flex-direction: column; align-items: flex-start; gap: 0.9rem; }

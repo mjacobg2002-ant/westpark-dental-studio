@@ -40,18 +40,15 @@
 #google-reviews-widget { margin-top: 2.75rem; }
 #google-reviews-widget:empty { display: none; }
 
-/* Auto-scrolling review carousel */
+/* Auto-scrolling review carousel — full-bleed so cards aren't cut off early */
 .reviews__carousel {
   margin-top: 2.75rem; overflow: hidden; position: relative;
-  -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
-          mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+  width: 100vw; margin-left: 50%; transform: translateX(-50%);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent);
+          mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent);
 }
 .reviews__carousel:empty { display: none; }
-.reviews__track { display: flex; gap: 1.25rem; width: max-content; animation: rv-scroll 60s linear infinite; }
-@media (hover: hover) and (pointer: fine) {
-  .reviews__carousel:hover .reviews__track,
-  .reviews__carousel:focus-within .reviews__track { animation-play-state: paused; }
-}
+.reviews__track { display: flex; gap: 1.25rem; width: max-content; padding: 0 1.25rem; animation: rv-scroll 60s linear infinite; }
 .rv-card {
   flex: 0 0 clamp(258px, 80vw, 340px); box-sizing: border-box; text-align: left;
   background: #ffffff; border: 1px solid var(--line); border-radius: var(--radius); padding: 1.65rem 1.5rem;
@@ -279,7 +276,8 @@
 .step p { font-size: 0.92rem; color: var(--taupe-deep); margin: 0; }
 
 /* ---------- FAQ ---------- */
-.faq { background: var(--ivory); }
+.faq { background: var(--ivory); padding: clamp(2.5rem, 5vh, 3.5rem) 0 clamp(4rem, 9vh, 6.5rem); }
+.faq__head { margin-bottom: 2.25rem; }
 .faq__inner { max-width: 860px; margin: 0 auto; padding: 0 var(--gutter); }
 .faq__head { text-align: center; margin-bottom: 3rem; }
 .faq__head .eyebrow { margin-bottom: 1rem; }
