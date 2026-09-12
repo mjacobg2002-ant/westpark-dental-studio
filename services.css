@@ -48,8 +48,10 @@
 }
 .reviews__carousel:empty { display: none; }
 .reviews__track { display: flex; gap: 1.25rem; width: max-content; animation: rv-scroll 60s linear infinite; }
-.reviews__carousel:hover .reviews__track,
-.reviews__carousel:focus-within .reviews__track { animation-play-state: paused; }
+@media (hover: hover) and (pointer: fine) {
+  .reviews__carousel:hover .reviews__track,
+  .reviews__carousel:focus-within .reviews__track { animation-play-state: paused; }
+}
 .rv-card {
   flex: 0 0 clamp(258px, 80vw, 340px); box-sizing: border-box; text-align: left;
   background: #ffffff; border: 1px solid var(--line); border-radius: var(--radius); padding: 1.65rem 1.5rem;
