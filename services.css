@@ -55,8 +55,11 @@
 .primary-nav .dropdown-panel a::after { display: none; }
 .primary-nav .dropdown-panel a:hover { color: var(--gold) !important; }
 
+.dropdown-panel--simple { grid-template-columns: 1fr; min-width: 260px; gap: 0; }
+
 @media (max-width: 1160px) {
   .dropdown-panel { grid-template-columns: repeat(3, minmax(148px, 1fr)); }
+  .dropdown-panel--simple { grid-template-columns: 1fr; }
 }
 
 /* ---------- Interior page hero (dark, clears fixed header) ---------- */

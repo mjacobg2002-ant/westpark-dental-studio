@@ -526,13 +526,21 @@ body.menu-open { overflow: hidden; }
 }
 
 @media (max-width: 780px) {
-  .hero { padding-top: 9rem; padding-bottom: 4rem; }
-  .hero__grid { grid-template-columns: 1fr; gap: 2.75rem; text-align: left; }
-  .hero__title { font-size: clamp(3rem, 11vw, 4.4rem); margin-bottom: 1.3rem; }
-  .hero__lede { max-width: 46ch; font-size: 1.12rem; }
-  .hero__media { max-width: 560px; width: 100%; margin-inline: auto; }
-  .hero__media .photo { aspect-ratio: 4 / 3; }
-  .hero__badge { left: 1rem; bottom: 1rem; }
+  /* Mobile hero: photo becomes the full-bleed background, text overlaid */
+  .hero {
+    padding-top: 8.5rem; padding-bottom: 4.5rem; min-height: 86vh;
+    display: flex; align-items: center;
+    background:
+      linear-gradient(180deg, rgba(14,12,9,0.74) 0%, rgba(14,12,9,0.48) 42%, rgba(14,12,9,0.84) 100%),
+      url("/assets/img/studio-room.jpg") center center / cover no-repeat;
+  }
+  .hero::before { display: none; }
+  .hero__grid { grid-template-columns: 1fr; gap: 0; }
+  .hero__copy { max-width: 44ch; }
+  .hero__title { font-size: clamp(2.9rem, 10vw, 3.9rem); margin-bottom: 1.15rem; }
+  .hero__lede { max-width: 42ch; font-size: 1.1rem; color: rgba(255,255,255,0.92); margin-bottom: 1.9rem; }
+  .hero__actions { margin-bottom: 1.4rem; }
+  .hero__media { display: none; }
   .hero__scroll { display: none; }
   .intro__grid, .doctor__grid, .location__grid, .feature__grid { grid-template-columns: 1fr; gap: 2.5rem; }
   .intro__media, .doctor__media { max-width: 460px; }
