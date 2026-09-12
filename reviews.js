@@ -53,9 +53,14 @@
   if (!reduce) data.forEach(function (r) { track.appendChild(makeCard(r)); });
   mount.appendChild(track);
 
-  // slow, steady glide — scale duration with the number of reviews
+  // slow, steady glide at a constant pixels-per-second (slower on mobile so it's readable)
   if (!reduce) {
-    var seconds = Math.max(36, data.length * 7);
-    track.style.animationDuration = seconds + "s";
+    var setSpeed = function () {
+      var perSet = track.scrollWidth / 2;                 // width of one (pre-duplicate) set
+      var pxPerSec = window.innerWidth < 640 ? 24 : 45;   // mobile is slower
+      track.style.animationDuration = Math.max(30, Math.round(perSet / pxPerSec)) + "s";
+    };
+    setSpeed();
+    window.addEventListener("resize", setSpeed);
   }
 })();
