@@ -144,22 +144,28 @@
   .svc-scroller::before, .svc-scroller::after { width: 26px; }
 }
 
-/* ---------- Mobile: original tiles become a smooth horizontal swipe ---------- */
+/* ---------- "What we do" — original tiles in a smooth horizontal swipe rail ---------- */
+.services__list {
+  display: flex !important; grid-template-columns: none !important; border-top: 0 !important;
+  overflow-x: auto; scroll-snap-type: x proximity; scroll-behavior: smooth;
+  gap: 1.15rem; padding: 0.5rem var(--gutter) 1.25rem; margin: 0; list-style: none;
+  -webkit-overflow-scrolling: touch; overscroll-behavior-x: contain;
+  scrollbar-width: thin; scrollbar-color: rgba(255,255,255,0.22) transparent;
+}
+.services__list::-webkit-scrollbar { height: 6px; }
+.services__list::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.18); border-radius: 999px; }
+.services__list::-webkit-scrollbar-track { background: transparent; }
+.services__list .svc {
+  flex: 0 0 clamp(275px, 30%, 335px); scroll-snap-align: start; padding: 0 !important;
+  border: 1px solid var(--line-dark) !important; border-radius: var(--radius);
+  background: rgba(255,255,255,0.03);
+  transition: border-color .3s var(--ease), background .3s var(--ease), transform .3s var(--ease);
+}
+.services__list .svc:hover { background: rgba(255,255,255,0.055); border-color: var(--gold) !important; transform: translateY(-4px); }
+.services__list .svc__link { display: block; height: 100%; padding: 2.2rem 1.85rem 2.3rem; color: inherit; }
 @media (max-width: 640px) {
-  .services__list {
-    display: flex; grid-template-columns: none; border-top: 0;
-    overflow-x: auto; scroll-snap-type: x proximity; scroll-behavior: smooth;
-    gap: 1rem; padding: 0.5rem var(--gutter) 1.2rem;
-    -webkit-overflow-scrolling: touch; overscroll-behavior-x: contain;
-    scrollbar-width: thin; scrollbar-color: rgba(0,0,0,0.2) transparent;
-  }
-  .services__list::-webkit-scrollbar { height: 6px; }
-  .services__list::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.18); border-radius: 999px; }
-  .services__list .svc {
-    flex: 0 0 84%; scroll-snap-align: start;
-    border: 1px solid var(--line-dark) !important; border-radius: var(--radius);
-  }
-  .services__list .svc__link { padding: 1.9rem 1.6rem 2rem; }
+  .services__list .svc { flex: 0 0 74%; }
+  .services__list .svc__link { padding: 1.9rem 1.55rem 2rem; }
 }
 
 /* ---------- Clickable "What we do" tiles ---------- */
