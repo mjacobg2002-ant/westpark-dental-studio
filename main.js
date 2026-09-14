@@ -62,4 +62,16 @@
     }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
     reveals.forEach(function (el) { io.observe(el); });
   }
+
+  /* ---- Google Ads conversion: fire on Book (Zocdoc) and Call (tel:) clicks ---- */
+  document.addEventListener("click", function (e) {
+    var a = e.target && e.target.closest ? e.target.closest("a[href]") : null;
+    if (!a) return;
+    var href = a.getAttribute("href") || "";
+    var isBook = href.indexOf("zocdoc.com") !== -1;
+    var isCall = href.indexOf("tel:") === 0;
+    if ((isBook || isCall) && typeof window.gtag === "function") {
+      window.gtag("event", "ads_conversion_Contact_Us_1");
+    }
+  }, true);
 })();
