@@ -428,6 +428,8 @@ body.menu-open { overflow: hidden; }
 .experience__media { margin: 0 0 3.5rem; }
 .experience__media img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: var(--radius); box-shadow: 0 30px 60px rgba(0,0,0,0.35); }
 @media (max-width: 640px) { .experience__media img { aspect-ratio: 4 / 3; } }
+/* Desktop only: hide the experience photo (keep it on mobile) */
+@media (min-width: 781px) { .experience__media { display: none; } }
 .experience__grid { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 2.5rem; }
 .experience__grid li { border-top: 1px solid var(--line-dark); padding-top: 1.5rem; }
 .experience__grid span { font-size: 0.72rem; letter-spacing: 0.2em; color: var(--gold-soft); }
