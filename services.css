@@ -73,6 +73,43 @@
 .map-embed-section .gmap { width: 100%; height: 460px; border: 0; display: block; }
 @media (max-width: 780px) { .map-embed-section .gmap { height: 340px; } }
 
+/* ---------- Prominent financing banner (high-cost service pages) ---------- */
+.finance-banner {
+  background:
+    radial-gradient(80% 140% at 12% 0%, rgba(0,195,125,0.14), transparent 60%),
+    linear-gradient(150deg, #0f2a20 0%, #123a2b 60%, #0d3325 100%);
+  color: #eaf7f0;
+}
+.finance-banner__inner {
+  max-width: var(--wrap); margin: 0 auto; padding: clamp(3rem, 7vh, 4.75rem) var(--gutter);
+}
+.finance-banner__copy { max-width: 720px; }
+.finance-banner__eyebrow {
+  display: inline-block; font-size: 0.68rem; letter-spacing: 0.24em; text-transform: uppercase;
+  font-weight: 600; color: #0f2a20; background: #00c37d; padding: 0.42rem 0.9rem; border-radius: 999px; margin: 0 0 1.25rem;
+}
+.finance-banner__title { font-size: clamp(1.9rem, 1.3rem + 2.4vw, 3rem); color: #fff; margin: 0 0 1rem; line-height: 1.08; }
+.finance-banner__lede { font-size: 1.08rem; color: rgba(255,255,255,0.82); max-width: 56ch; margin: 0 0 1.75rem; }
+.finance-banner__points {
+  list-style: none; padding: 0; margin: 0 0 2rem;
+  display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 0.85rem 1.75rem;
+}
+.finance-banner__points li { position: relative; padding-left: 1.9rem; font-size: 1rem; color: rgba(255,255,255,0.92); }
+.finance-banner__points li::before {
+  content: "✓"; position: absolute; left: 0; top: -0.05em;
+  width: 1.35rem; height: 1.35rem; border-radius: 50%; background: #00c37d; color: #0f2a20;
+  display: grid; place-items: center; font-size: 0.8rem; font-weight: 700;
+}
+.finance-banner__points strong { color: #fff; }
+.finance-banner__actions { display: flex; flex-wrap: wrap; gap: 1rem; }
+.finance-banner .btn--solid { background: #00c37d; color: #0f2a20; border-color: #00c37d; }
+.finance-banner .btn--solid:hover { background: #fff; color: #0f2a20; border-color: #fff; }
+.btn--outline-light { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.5); }
+.btn--outline-light:hover { border-color: #fff; background: rgba(255,255,255,0.1); }
+@media (max-width: 560px) {
+  .finance-banner__points { grid-template-columns: 1fr; }
+}
+
 /* ---------- Insurance plan list (billing page) ---------- */
 .plan-list {
   max-width: var(--wrap); margin: 0 auto; padding: 0 var(--gutter);
