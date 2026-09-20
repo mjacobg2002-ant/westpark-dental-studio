@@ -219,7 +219,12 @@ body.menu-open { overflow: hidden; }
 .hero__copy .eyebrow { color: var(--gold-soft); }
 .hero__title {
   font-size: clamp(2.7rem, 1.3rem + 6vw, 5.6rem);
-  font-weight: 300; letter-spacing: -0.015em; margin-bottom: 1.6rem;
+  font-weight: 300; letter-spacing: -0.015em; margin-bottom: 0.9rem;
+}
+.hero__subhead {
+  font-size: clamp(1.05rem, 1rem + 0.5vw, 1.35rem);
+  font-weight: 400; color: var(--gold-soft); letter-spacing: 0.005em;
+  max-width: 34ch; margin: 0 0 1.6rem;
 }
 .hero__lede {
   max-width: 30ch; color: rgba(255,255,255,0.78); font-size: clamp(1.02rem, 0.98rem + 0.4vw, 1.2rem);
@@ -539,6 +544,18 @@ body.menu-open { overflow: hidden; }
     background:
       linear-gradient(180deg, rgba(14,12,9,0.74) 0%, rgba(14,12,9,0.48) 42%, rgba(14,12,9,0.84) 100%),
       url("/assets/img/studio-room.jpg") center center / cover no-repeat;
+  }
+  /* Serve AVIF/WebP for the mobile hero background where supported; jpg above is the fallback */
+  @supports (background-image: image-set(url("x.webp") type("image/webp"))) {
+    .hero {
+      background:
+        linear-gradient(180deg, rgba(14,12,9,0.74) 0%, rgba(14,12,9,0.48) 42%, rgba(14,12,9,0.84) 100%),
+        image-set(
+          url("/assets/img/studio-room.avif") type("image/avif"),
+          url("/assets/img/studio-room.webp") type("image/webp"),
+          url("/assets/img/studio-room.jpg") type("image/jpeg")
+        ) center center / cover no-repeat;
+    }
   }
   .hero::before {
     display: block; content: ""; position: absolute; inset: 0; z-index: 0;
