@@ -73,5 +73,14 @@
     if ((isBook || isCall) && typeof window.gtag === "function") {
       window.gtag("event", "ads_conversion_Contact_Us_1");
     }
+    /* Distinct GA4 event so Book clicks are reportable on their own
+       (separate from Call), segmentable by page. */
+    if (isBook && typeof window.gtag === "function") {
+      window.gtag("event", "book_appointment_click", {
+        page_location: window.location.href,
+        page_path: window.location.pathname,
+        button_text: (a.textContent || "").trim().slice(0, 60)
+      });
+    }
   }, true);
 })();
